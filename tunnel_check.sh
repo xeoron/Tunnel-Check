@@ -12,8 +12,8 @@
 #     crontab -e
 #     * * * * * /bin/bash /opt/local/bin/tunnel_check.sh > /dev/null
 
-SERVICE='vpn/ssh-service-name-here'
-PROGRAM='program-Name-Here'
+SERVICE='service-hostname-here'
+PROGRAM='program-name-here'
 PS='ps x'
 VPN='/usr/sbin/scutil --nc list'
 

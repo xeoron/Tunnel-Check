@@ -14,30 +14,26 @@ Example:
 Setup
 ======
 
-Step 0)
-    Edit the script and fill in the vpn/ssh service and program name fields 
+Step 0) Intall
 
-    SERVICE='vpn/ssh-service-name-here'
-    PROGRAM='program-Name-Here'
+    Open a terminal and run ./intall_tunnel-check.sh
+    Provide the name of the VPN/SSH Tunnel Host you wish to use
+    Say which program you wish to kill when the conneciton is not open
 
-In the Terminal run the below commands
-Step 1) 
-
-    sudo mv ./tunnel_check.sh /opt/local/bin/
-
-Step 2) 
+Step 1) Setup Cron to Run Script Once Per Minute
 
     crontab -e
 
-Step 3) 
+Step 2) Turn to edit-mode and past
 
     Press 'i'
-
-Step 4) Paste this into the crontab for it to run once per minute
-
+    Paste this into the crontab for it to run once per minute:
+    
     * * * * * /bin/bash /opt/local/bin/tunnel_check.sh > /dev/null
 
-Step 5) Press ":wq" followed by the enter key
+Step 3) Save and quit crontab
+
+    Press ":wq" followed by the enter key
 
 Requirements
 =====
