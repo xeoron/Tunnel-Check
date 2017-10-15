@@ -24,14 +24,14 @@ Step 1) Setup Cron to Run Script Once Per Minute
 
     crontab -e
 
-Step 2) Turn to edit-mode and past
+Step 2) Turn to Edit-Mode and Paste
 
     Press 'i'
     Paste this into the crontab for it to run once per minute:
     
     * * * * * /bin/bash /opt/local/bin/tunnel_check.sh > /dev/null
 
-Step 3) Save and quit crontab
+Step 3) Save and Quit Crontab
 
     Press ":wq" followed by the enter key
 

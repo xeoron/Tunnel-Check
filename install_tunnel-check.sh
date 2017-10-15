@@ -1,6 +1,6 @@
 #!/bin/sh -e
 #Author: Jason Campisi
-#Date: 10/15/207
+#Date: 10/15/2017
 #version 0.3.0
 #Released under the GPL v2 or higher
 NAME="tunnel_check"
