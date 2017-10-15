@@ -3,7 +3,12 @@ Tunnel Check
 Purpose: 
 
 Crontab script that checks to see if a SSH and VPN Tunnel is open to service of your choosing, 
-and if not terminate program of your choice.
+and if it is not then it will exterminate program of your choice.
+
+Example:
+
+    If you have a SSH & VPN Tunnel to your company, but the VPN connection fails, 
+    then it can cut turn off your program from running that you are using on the VPN/SSH Tunnel.
 
 
 Setup
