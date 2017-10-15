@@ -1,6 +1,7 @@
 #!/bin/sh
 # Filename: tunnel_check.sh
 # Author: Jason Campisi 10/7/17
+# Version 1.2.1
 # Released under the GPL 3 or higher
 # Purpose: check to see if there is both 
 #    a ssh tunnel to tunnelr & VPN connection, 
@@ -17,16 +18,17 @@ PS='ps x'
 VPN='/usr/sbin/scutil --nc list'
 
 if $VPN | grep "Connected" > /dev/null && $PS | grep -i $SERVICE | grep -v "grep" > /dev/null
-  then
+    then
 	echo "$SERVICE SSH & VPN connection is open!"
 	exit
 else 
-	echo "$SERVICE VPN &/or SSH tunnel is NOT on.\n-->Checking to see if $PROGRAM is running!"
+    echo "$SERVICE VPN &/or SSH tunnel is NOT on."
+    echo " --> Checking to see if $PROGRAM is running!"
     if $PS | grep -i $PROGRAM | grep -v "grep" > /dev/null
     then 
-    	echo "-->Killing $PROGRAM"
+    	echo " --> Killing $PROGRAM"
     	$PS | grep -i $PROGRAM | grep -v "grep" | awk '{print $1}' |xargs kill -9 >/dev/null
     else
-    	echo "-->$PROGRAM is not running!"
+    	echo " --> $PROGRAM is not running!"
     fi
 fi
