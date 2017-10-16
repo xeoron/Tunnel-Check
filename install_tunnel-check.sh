@@ -1,7 +1,7 @@
 #!/bin/sh -e
 #Author: Jason Campisi
 #Date: 10/15/2017
-#version 0.3.0
+#version 0.3.1
 #Released under the GPL v2 or higher
 NAME="tunnel_check"
 EXT="sh"
@@ -44,3 +44,12 @@ echo " Setting file to executable...";
    chmod +x ./$FILE
 echo " Installing $NAME to $LOCATION ...";
    sudo cp ./$FILE $LOCATION$NAME
+
+echo ""
+echo "****************************************************************"
+echo ""
+echo " If you want it to run regularly via cron you have to add"
+echo "  then type 'crontab -e', then press 'i' and paste this:"
+echo "* * * * * /bin/bash /opt/local/bin/tunnel_check.sh > /dev/null"
+echo ""
+echo "****************************************************************"
